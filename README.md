@@ -1,4 +1,4 @@
-# Fluxo Financeiro — Base do Trabalho Prático TestOps
+# Fluxo Financeiro — Base do Trabalho Prático TestOps CI/CD
 
 Aplicação base para um trabalho prático de Qualidade de Software, TestOps e deploy controlado por Jenkins. O template usa Next.js 16, React 19, TailwindCSS 4 e Firebase Firestore, mas não entrega as features avaliadas: ele deixa as três entregas principais como scaffold com `TODO implement` para que a turma implemente, teste e publique via Jenkins.
 
