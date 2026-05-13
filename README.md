@@ -7,6 +7,7 @@ A lógica central da disciplina é simples: **se a feature não estiver provada 
 O trabalho é dividido em três semanas com ferramentas de teste diferentes — Cypress, Playwright e TestRigor — sempre com o Jenkins como gatekeeper do deploy na Vercel.
 
 ---
+---
 
 ## Instruções detalhadas
 
