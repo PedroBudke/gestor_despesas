@@ -4,12 +4,15 @@ Feature: Formulario de saida manual
     Given que acesso a pagina inicial
 
   Scenario: Renderiza o titulo do formulario
+    When clico na aba de saida manual
     Then vejo o heading "Saída manual"
 
   Scenario: Exibe aviso de scaffold da feature
+    When clico na aba de saida manual
     Then vejo o texto "TODO implement: esta feature deve ser concluída"
 
   Scenario: Exibe o label de categoria no formulario
+    When clico na aba de saida manual
     Then vejo o label "Categoria"
 
   Scenario: Bloqueia o envio quando o titulo esta vazio

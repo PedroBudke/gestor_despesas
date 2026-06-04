@@ -224,9 +224,10 @@ export function ExpenseDashboardApp() {
               <div className="flex rounded-2xl border border-[var(--border)] bg-white/50 p-1 backdrop-blur-sm">
                 {formTabs.map((tab) => (
                   <button
-                    key={tab.id}
-                    type="button"
-                    onClick={() => setActiveTab(tab.id)}
+                  key={tab.id}
+                  type="button"
+                  data-testid={`tab-${tab.id}`}
+                  onClick={() => setActiveTab(tab.id)}
                     className={`flex flex-1 flex-col items-center gap-0.5 rounded-xl px-2 py-2.5 transition-all ${
                       activeTab === tab.id
                         ? tab.id === "income"

@@ -1,11 +1,11 @@
 import { Given, Then } from "@badeball/cypress-cucumber-preprocessor";
 
-// Steps provisorios usados nos cenarios @todo para que o Cucumber parse os arquivos
-// sem erros de "step not found". Substitua pelo step real ao implementar cada cenario.
+// Steps provisorios usados nos cenarios @todo.
+// Falham intencionalmente para evidenciar que a feature ainda nao foi implementada.
 Given("pendente de implementacao", () => {
-  cy.log("TODO: este cenario ainda nao foi implementado.");
+  throw new Error("TODO: este cenario ainda nao foi implementado.");
 });
 
 Then("pendente de implementacao", () => {
-  cy.log("TODO: este cenario ainda nao foi implementado.");
+  throw new Error("TODO: este cenario ainda nao foi implementado.");
 });

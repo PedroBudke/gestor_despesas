@@ -1,7 +1,11 @@
 import { Given, Then, When } from "@badeball/cypress-cucumber-preprocessor";
 
 Given("que acesso a pagina inicial", () => {
+  // Aguarda a primeira request Firestore como prova de que o React hidratou
+  // e os event listeners estão fixados (useEffect roda após a hidratação).
+  cy.intercept({ url: /firestore\.googleapis\.com/ }).as("reactHydrated");
   cy.visit("/");
+  cy.wait("@reactHydrated", { timeout: 10000 });
 });
 
 Then("vejo o texto {string}", (text: string) => {
