@@ -1,0 +1,22 @@
+﻿node : C:\Users\pedro_budke\Documents\Qualidade\gestor_despesas\node_modules\.bin\cypress:2
+No linha:1 caractere:64
++ ... _despesas"; node node_modules/.bin/cypress run --headless --env "tags ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (C:\Users\pedro_...\.bin\cypress:2:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+basedir=$(dirname "$(echo "$0" | sed -e 's,\\,/,g')")
+          ^^^^^^^
+
+SyntaxError: missing ) after argument list
+    at wrapSafe (node:internal/modules/cjs/loader:1624:18)
+    at Module._compile (node:internal/modules/cjs/loader:1666:20)
+    at Object..js (node:internal/modules/cjs/loader:1824:10)
+    at Module.load (node:internal/modules/cjs/loader:1427:32)
+    at Module._load (node:internal/modules/cjs/loader:1250:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:152:5)
+    at node:internal/main/run_main_module:33:47
+
+Node.js v24.4.0

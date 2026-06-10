@@ -1,10 +1,12 @@
 import {
+  addDoc,
   collection,
   deleteDoc,
   doc,
   onSnapshot,
   orderBy,
   query,
+  serverTimestamp,
 } from "firebase/firestore";
 import { getFirestoreDatabase, getMissingFirebaseEnvironmentVariables } from "@/services/firebase";
 import type { Expense, ExpenseInput } from "@/services/expense-types";
@@ -34,14 +36,15 @@ function getExpensesCollection() {
 }
 
 export async function createExpense(expenseInput: ExpenseInput) {
-  void expenseInput;
+  const expensesCollection = getExpensesCollection();
 
-  // TODO implement: validar regras de negócio para saídas manuais e saídas por OCR.
-  // TODO implement: persistir a despesa no Firestore mantendo createdAt para ordenação.
-  // TODO implement: retornar o documento criado para refletir no dashboard.
-  throw new Error(
-    "TODO implement: conclua a feature de saídas antes de salvar no Firestore.",
-  );
+  await addDoc(expensesCollection, {
+    title: expenseInput.title,
+    amount: expenseInput.amount,
+    category: expenseInput.category,
+    date: expenseInput.date,
+    createdAt: serverTimestamp(),
+  });
 }
 
 export async function deleteExpense(id: string) {

@@ -5,10 +5,10 @@ import {
 } from "@/services/expense-types";
 
 export interface ReceiptExtractionApiResult {
-  establishmentName: string | null;
+  establishment: string | null;
   amount: number | null;
-  purchaseDate?: string | null;
-  suggestedCategory?: string | null;
+  date?: string | null;
+  category?: string | null;
   rawText?: string;
 }
 
@@ -46,17 +46,16 @@ export function getReceiptFileValidationMessage(
 export function mapReceiptExtractionToExpense(
   extraction: ReceiptExtractionApiResult,
 ): ExpenseInput {
-  const suggestedCategory =
-    extraction.suggestedCategory &&
-    expenseCategories.includes(extraction.suggestedCategory)
-      ? extraction.suggestedCategory
+  const validCategory =
+    extraction.category && expenseCategories.includes(extraction.category)
+      ? extraction.category
       : "Outros";
 
   return {
     amount: Number(extraction.amount ?? 0),
-    category: suggestedCategory,
-    date: extraction.purchaseDate ?? getTodayDateString(),
-    title: extraction.establishmentName?.trim() || "Despesa importada",
+    category: validCategory,
+    date: extraction.date ?? getTodayDateString(),
+    title: extraction.establishment?.trim() || "Despesa importada",
   };
 }
 

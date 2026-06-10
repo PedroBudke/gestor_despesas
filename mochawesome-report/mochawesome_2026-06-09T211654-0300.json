@@ -1,0 +1,144 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 3,
+    "failures": -2,
+    "start": "2026-06-10T00:16:54.774Z",
+    "end": "2026-06-10T00:16:54.826Z",
+    "duration": 52,
+    "testsRegistered": 3,
+    "passPercent": null,
+    "pendingPercent": 100,
+    "other": 2,
+    "hasOther": true,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "230891e7-c1f4-4a05-aead-e71366d77484",
+      "title": "",
+      "fullFile": "cypress\\e2e\\todo-create-expense.feature",
+      "file": "cypress\\e2e\\todo-create-expense.feature",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "253224be-1577-4e86-ae77-43fcbdb28e54",
+          "title": "Criação de saída manual no Firestore",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Salva uma saida manual com dados validos e exibe na lista",
+              "fullTitle": "Criação de saída manual no Firestore Salva uma saida manual com dados validos e exibe na lista",
+              "timedOut": null,
+              "duration": 0,
+              "state": "pending",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": true,
+              "context": null,
+              "code": "",
+              "err": {},
+              "uuid": "c898dc66-b3af-473b-b724-e69de9bb98b5",
+              "parentUUID": "253224be-1577-4e86-ae77-43fcbdb28e54",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Exibe confirmacao e limpa o formulario apos salvar",
+              "fullTitle": "Criação de saída manual no Firestore Exibe confirmacao e limpa o formulario apos salvar",
+              "timedOut": null,
+              "duration": 0,
+              "state": "pending",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": true,
+              "context": null,
+              "code": "",
+              "err": {},
+              "uuid": "0db3bc29-6bca-4ce3-bb58-5b45502975f5",
+              "parentUUID": "253224be-1577-4e86-ae77-43fcbdb28e54",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Permite excluir uma saida existente da lista",
+              "fullTitle": "Criação de saída manual no Firestore Permite excluir uma saida existente da lista",
+              "timedOut": null,
+              "duration": 0,
+              "state": "pending",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": true,
+              "context": null,
+              "code": "",
+              "err": {},
+              "uuid": "b2b9656a-1e70-430d-a598-71f6a8993489",
+              "parentUUID": "253224be-1577-4e86-ae77-43fcbdb28e54",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [],
+          "pending": [
+            "c898dc66-b3af-473b-b724-e69de9bb98b5",
+            "0db3bc29-6bca-4ce3-bb58-5b45502975f5",
+            "b2b9656a-1e70-430d-a598-71f6a8993489"
+          ],
+          "skipped": [],
+          "duration": 0,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "mochawesome-report",
+        "overwrite": true,
+        "html": true,
+        "json": true,
+        "timestamp": "isoDateTime"
+      },
+      "version": "6.3.2"
+    }
+  }
+}

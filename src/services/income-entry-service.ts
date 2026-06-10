@@ -1,18 +1,41 @@
-import { isFirebaseConfigured } from "@/services/firebase";
+import {
+  addDoc,
+  collection,
+  onSnapshot,
+  orderBy,
+  query,
+  serverTimestamp,
+} from "firebase/firestore";
+import { getFirestoreDatabase, isFirebaseConfigured } from "@/services/firebase";
 import type {
   IncomeEntry,
   IncomeEntryInput,
 } from "@/services/income-entry-types";
 
-export async function createIncomeEntry(incomeEntry: IncomeEntryInput) {
-  void incomeEntry;
+const incomeEntriesCollectionName = "income_entries";
 
-  // TODO implement: persistir entradas no Firestore em uma coleção dedicada.
-  // TODO implement: validar regras de negócio antes de salvar.
-  // TODO implement: devolver o registro criado para refletir no dashboard.
-  throw new Error(
-    "TODO implement: conclua a feature de entradas antes de salvar no Firestore.",
-  );
+function getIncomeEntriesCollection() {
+  const database = getFirestoreDatabase();
+
+  if (!database) {
+    throw new Error(
+      "Firestore indisponível. Configure as variáveis NEXT_PUBLIC_FIREBASE_* para habilitar a persistência.",
+    );
+  }
+
+  return collection(database, incomeEntriesCollectionName);
+}
+
+export async function createIncomeEntry(incomeEntry: IncomeEntryInput) {
+  const incomeEntriesCollection = getIncomeEntriesCollection();
+
+  await addDoc(incomeEntriesCollection, {
+    title: incomeEntry.title,
+    amount: incomeEntry.amount,
+    source: incomeEntry.source,
+    date: incomeEntry.date,
+    createdAt: serverTimestamp(),
+  });
 }
 
 export function subscribeToIncomeEntries(
@@ -23,8 +46,36 @@ export function subscribeToIncomeEntries(
     return () => undefined;
   }
 
-  // TODO implement: sincronizar a coleção de entradas com o Firestore.
-  onIncomeEntriesChange([]);
+  try {
+    const incomeEntriesCollection = getIncomeEntriesCollection();
+    const incomeEntriesQuery = query(
+      incomeEntriesCollection,
+      orderBy("createdAt", "desc"),
+    );
 
-  return () => undefined;
+    return onSnapshot(
+      incomeEntriesQuery,
+      (snapshot) => {
+        const entries = snapshot.docs.map((snapshotDocument) => {
+          const data = snapshotDocument.data();
+
+          return {
+            amount: Number(data.amount ?? 0),
+            date: String(data.date ?? ""),
+            id: snapshotDocument.id,
+            source: String(data.source ?? "Outros"),
+            title: String(data.title ?? ""),
+          };
+        });
+
+        onIncomeEntriesChange(entries);
+      },
+      () => {
+        // Erros de conexão são tratados silenciosamente — dashboard continua com dados em cache
+      },
+    );
+  } catch {
+    onIncomeEntriesChange([]);
+    return () => undefined;
+  }
 }

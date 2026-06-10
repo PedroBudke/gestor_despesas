@@ -1,0 +1,144 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 3,
+    "failures": -2,
+    "start": "2026-06-10T00:16:59.071Z",
+    "end": "2026-06-10T00:16:59.120Z",
+    "duration": 49,
+    "testsRegistered": 3,
+    "passPercent": null,
+    "pendingPercent": 100,
+    "other": 2,
+    "hasOther": true,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "3ecf9856-4112-47ee-ae8f-a7fdd6b611a8",
+      "title": "",
+      "fullFile": "cypress\\e2e\\todo-ocr-extraction.feature",
+      "file": "cypress\\e2e\\todo-ocr-extraction.feature",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "a59b484d-4e65-4cdc-a171-7ca10fe3cd3d",
+          "title": "Extração de nota fiscal por OCR",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Extrai dados de uma nota fiscal em PDF e salva como despesa",
+              "fullTitle": "Extração de nota fiscal por OCR Extrai dados de uma nota fiscal em PDF e salva como despesa",
+              "timedOut": null,
+              "duration": 0,
+              "state": "pending",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": true,
+              "context": null,
+              "code": "",
+              "err": {},
+              "uuid": "30057715-6652-4338-8bcf-a8b3bd53ba79",
+              "parentUUID": "a59b484d-4e65-4cdc-a171-7ca10fe3cd3d",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "A rota de OCR retorna os campos esperados no contrato",
+              "fullTitle": "Extração de nota fiscal por OCR A rota de OCR retorna os campos esperados no contrato",
+              "timedOut": null,
+              "duration": 0,
+              "state": "pending",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": true,
+              "context": null,
+              "code": "",
+              "err": {},
+              "uuid": "d7b0645e-95e1-4047-9eff-1a9df84e610e",
+              "parentUUID": "a59b484d-4e65-4cdc-a171-7ca10fe3cd3d",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Exibe mensagem de sucesso apos importar a nota fiscal",
+              "fullTitle": "Extração de nota fiscal por OCR Exibe mensagem de sucesso apos importar a nota fiscal",
+              "timedOut": null,
+              "duration": 0,
+              "state": "pending",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": true,
+              "context": null,
+              "code": "",
+              "err": {},
+              "uuid": "2dfff9e1-e402-44d4-9ac9-f571b329909a",
+              "parentUUID": "a59b484d-4e65-4cdc-a171-7ca10fe3cd3d",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [],
+          "pending": [
+            "30057715-6652-4338-8bcf-a8b3bd53ba79",
+            "d7b0645e-95e1-4047-9eff-1a9df84e610e",
+            "2dfff9e1-e402-44d4-9ac9-f571b329909a"
+          ],
+          "skipped": [],
+          "duration": 0,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "mochawesome-report",
+        "overwrite": true,
+        "html": true,
+        "json": true,
+        "timestamp": "isoDateTime"
+      },
+      "version": "6.3.2"
+    }
+  }
+}
